@@ -3,17 +3,17 @@ import './App.css';
 import {
   Navigation,
   HeroSection,
-  CompanyLogos,
-  FeaturesSection,
-  MentorsGrid,
-  JobsSection,
-  GigsSection,
-  PartnersSection,
-  LearningSection,
-  StatsSection,
-  TestimonialsSection,
-  Footer
+  ExpertsGrid
 } from './Components';
+import {
+  EnhancedFeaturesSection,
+  OpportunitiesSection,
+  ChannelsSection,
+  WebinarsSection,
+  PricingSection,
+  StatsSection,
+  Footer
+} from './AdditionalComponents';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -25,59 +25,55 @@ function App() {
         return (
           <>
             <HeroSection />
-            <CompanyLogos />
-            <FeaturesSection />
-            <MentorsGrid />
+            <EnhancedFeaturesSection />
+            <ExpertsGrid />
             <StatsSection />
-            <TestimonialsSection />
           </>
         );
-      case 'mentors':
+      case 'experts':
         return (
           <div className="min-h-screen bg-gray-50 pt-8">
-            <MentorsGrid />
+            <ExpertsGrid />
           </div>
         );
-      case 'jobs':
+      case 'opportunities':
         return (
           <div className="min-h-screen bg-gray-50 pt-8">
-            <JobsSection />
+            <OpportunitiesSection />
           </div>
         );
-      case 'gigs':
+      case 'channels':
         return (
           <div className="min-h-screen bg-gray-50 pt-8">
-            <GigsSection />
+            <ChannelsSection />
           </div>
         );
-      case 'partners':
+      case 'webinars':
         return (
           <div className="min-h-screen bg-gray-50 pt-8">
-            <PartnersSection />
+            <WebinarsSection />
           </div>
         );
-      case 'learning':
+      case 'pricing':
         return (
           <div className="min-h-screen bg-gray-50 pt-8">
-            <LearningSection />
+            <PricingSection />
           </div>
         );
       default:
         return (
           <>
             <HeroSection />
-            <CompanyLogos />
-            <FeaturesSection />
-            <MentorsGrid />
+            <EnhancedFeaturesSection />
+            <ExpertsGrid />
             <StatsSection />
-            <TestimonialsSection />
           </>
         );
     }
   };
 
   return (
-    <div className="App bg-white">
+    <div className="App bg-white min-h-screen">
       <Navigation
         activeTab={activeTab}
         setActiveTab={setActiveTab}
